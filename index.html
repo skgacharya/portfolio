@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunil Acharya | Senior IT Project Manager & Full Stack Lead</title>
+    <title>Sunil Acharya | Senior Technical Program & Delivery Leader</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -18,305 +18,521 @@
                             500: '#0284c7',
                             600: '#0369a1',
                             700: '#075985',
+                            800: '#0c4a6e',
+                            900: '#0f172a'
+                        }
+                    },
+                    animation: {
+                        'avatar-pulse': 'pulseGlow 3s infinite ease-in-out',
+                        'float-subtle': 'floatSubtle 4s infinite ease-in-out'
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(2, 132, 199, 0.4)' },
+                            '50%': { boxShadow: '0 0 28px rgba(56, 189, 248, 0.7)' }
+                        },
+                        floatSubtle: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-6px)' }
                         }
                     }
                 }
             }
         }
     </script>
+    <style>
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(2, 132, 199, 0.12) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .dark .bg-grid-pattern {
+            background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .glass-card {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
 </head>
-<body class="bg-sky-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-sky-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-sky-500 selection:text-white relative bg-grid-pattern">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-50 border-b border-sky-100 dark:border-slate-800 transition-colors">
+    <!-- Navigation (Title Case & Proper Alignment) -->
+    <nav class="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-200/80 dark:border-slate-800 transition-colors">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
-                <span class="text-sky-600 dark:text-sky-400 font-mono">&lt;SA&gt;</span> Sunil Acharya
+            <a href="#" class="text-xl font-black tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+                <span class="p-1.5 rounded-lg bg-sky-600 text-white font-mono text-sm">{SA}</span> Sunil Acharya
             </a>
             
-            <div class="flex items-center gap-6">
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
-                    <a href="#about" class="hover:text-sky-600 dark:hover:text-sky-400 transition">About</a>
-                    <a href="#competencies" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Competencies</a>
-                    <a href="#experience" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Experience</a>
-                    <a href="#projects" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Open Source</a>
-                    <a href="#contact" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Contact</a>
+            <div class="flex items-center gap-8">
+                <div class="hidden md:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+                    <a href="#charter" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Charter</a>
+                    <a href="#metrics" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Impact</a>
+                    <a href="#matrix" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Capabilities</a>
+                    <a href="#projects" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Case Studies</a>
+                    <a href="#governance" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Governance</a>
+                    <a href="#experience" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">History</a>
+                    <a href="#contact" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Contact</a>
                 </div>
 
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle" class="p-2.5 rounded-xl bg-sky-100 dark:bg-slate-800 text-sky-700 dark:text-sky-400 hover:bg-sky-200 dark:hover:bg-slate-700 transition flex items-center justify-center">
-                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-lg hidden"></i>
-                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-lg hidden"></i>
+                <button id="theme-toggle" aria-label="Toggle theme" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-sky-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center justify-center border border-slate-200 dark:border-slate-700">
+                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-base hidden"></i>
+                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-base hidden"></i>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="about" class="pt-36 pb-20 px-6 max-w-6xl mx-auto">
+    <!-- Visual Backdrop Accent -->
+    <div class="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-tr from-sky-400/20 via-cyan-400/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- Executive Hero Section -->
+    <section id="charter" class="pt-36 pb-16 px-6 max-w-6xl mx-auto">
         <div class="flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1 space-y-6">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800/60 text-xs font-semibold uppercase tracking-wider">
-                    <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span> PMP® Certified | IT Leadership & Development
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100/80 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 border border-sky-200 dark:border-sky-800 text-xs font-bold uppercase tracking-wider glass-card">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> PMP® Certified | Senior Technical Program Leader
                 </div>
                 
-                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
-                    Bridging Strategic <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-cyan-500 dark:from-sky-400 dark:to-cyan-300">IT Leadership</span> & Technical Excellence.
+                <h1 class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+                    Technical Project Manager & <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-cyan-500 to-teal-400">Digital Transformation</span> Leader.
                 </h1>
                 
-                <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-                    18+ years leading enterprise digital transformation, software delivery, and full SDLC ownership. Blending high-level project governance with hands-on .NET Core and SQL Server architecture.
+                <p class="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+                    19+ years driving end-to-end SDLC ownership, ISMS frameworks, and enterprise software execution across regulated sectors. Aligning C-suite vision with resilient IT architecture, ISO compliance, and cross-functional teams.
                 </p>
+
+                <!-- Strategic Highlights -->
+                <div class="grid grid-cols-2 gap-4 pt-2 max-w-xl">
+                    <div class="p-3.5 rounded-xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 glass-card flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-900 dark:text-white">ISMS & Quality Control</p>
+                            <p class="text-[11px] text-slate-500">ISO 27001, 13485 & 21 CFR</p>
+                        </div>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 glass-card flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-900 dark:text-white">Agile Governance</p>
+                            <p class="text-[11px] text-slate-500">Scale, Sprints & Risk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Badge with Animated Avatar & Integrated Links -->
+            <div class="w-full md:w-80 bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 text-center shadow-2xl relative glass-card animate-float-subtle">
                 
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="#contact" class="px-6 py-3 rounded-xl bg-sky-600 dark:bg-sky-500 text-white font-semibold hover:bg-sky-700 dark:hover:bg-sky-400 transition flex items-center gap-2 shadow-lg shadow-sky-500/20">
-                        <i class="fa-solid fa-envelope"></i> Get In Touch
+                <div class="relative w-32 h-32 mx-auto mb-4">
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-500 via-cyan-400 to-teal-300 animate-avatar-pulse"></div>
+                    <img src="https://github.com/skgacharya.png" alt="Sunil Acharya" class="relative w-full h-full object-cover rounded-full p-1 bg-white dark:bg-slate-900">
+                </div>
+
+                <h3 class="text-xl font-black text-slate-900 dark:text-white">Sunil Acharya</h3>
+                <p class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider mt-1">Senior Technical Project Manager</p>
+                <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot me-1"></i>Surat, Gujarat, India</p>
+
+                <div class="mt-5 space-y-2.5">
+                    <a href="#contact" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-700 hover:to-cyan-700 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-md shadow-sky-500/20">
+                        <i class="fa-solid fa-paper-plane text-xs"></i> Executive Inquiry
                     </a>
-                    <a href="https://github.com/skgacharya" target="_blank" class="px-6 py-3 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-sky-200 dark:border-slate-700 hover:bg-sky-50 dark:hover:bg-slate-700 transition flex items-center gap-2">
-                        <i class="fa-brands fa-github"></i> GitHub Profile
-                    </a>
-                    <a href="https://www.linkedin.com/in/skgacharya" target="_blank" class="px-6 py-3 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-sky-200 dark:border-slate-700 hover:bg-sky-50 dark:hover:bg-slate-700 transition flex items-center gap-2">
-                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    <a href="https://www.linkedin.com/in/skgacharya" target="_blank" class="w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700 font-bold text-xs transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-linkedin text-sky-600 text-sm"></i> LinkedIn Profile
                     </a>
                 </div>
-            </div>
 
-            <!-- Profile Card -->
-            <div class="w-full md:w-80 bg-white dark:bg-slate-800/80 border border-sky-200/80 dark:border-slate-700 rounded-3xl p-6 text-center shadow-xl shadow-sky-200/40 dark:shadow-none backdrop-blur-sm relative">
-                <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-sky-400 to-cyan-500 p-1 mb-4 shadow-md">
-                    <!-- GitHub Profile Photo -->
-                    <img src="https://github.com/skgacharya.png" alt="Sunil Acharya" class="w-full h-full object-cover rounded-full bg-slate-100">
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Sunil Acharya</h3>
-                <p class="text-sm font-medium text-sky-600 dark:text-sky-400 mt-1">Senior Technical Project Manager</p>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Surat, Gujarat, India</p>
-
-                <div class="mt-6 pt-4 border-t border-sky-100 dark:border-slate-700 text-xs text-slate-600 dark:text-slate-300 space-y-2.5">
-                    <div class="flex justify-between">
-                        <span class="text-slate-500 dark:text-slate-400">Experience</span>
-                        <span class="font-semibold text-sky-600 dark:text-sky-400">18+ Years</span>
+                <div class="mt-6 pt-4 border-t border-slate-200/80 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 space-y-2.5 text-left">
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-500">Total Experience</span>
+                        <span class="font-bold text-slate-900 dark:text-white">19+ Years</span>
                     </div>
-                    <div class="flex justify-between">
-                        <span class="text-slate-500 dark:text-slate-400">Certifications</span>
-                        <span class="font-semibold text-slate-800 dark:text-white">PMP®, ISO 27001 LA</span>
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-500">PMI Credential</span>
+                        <span class="font-mono font-bold text-sky-600 dark:text-sky-400">PMP® #4285497</span>
                     </div>
-                    <div class="flex justify-between">
-                        <span class="text-slate-500 dark:text-slate-400">Education</span>
-                        <span class="font-semibold text-slate-800 dark:text-white">MBA (IT), B.Com</span>
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-500">Audit Status</span>
+                        <span class="font-bold text-slate-900 dark:text-white">ISO 27001 Lead Auditor</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-500">Academic Background</span>
+                        <span class="font-bold text-slate-900 dark:text-white">MBA (IT) | B.Com</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stat Highlights -->
-    <section class="border-y border-sky-200/60 dark:border-slate-800 bg-sky-100/50 dark:bg-slate-900/50 py-10">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <p class="text-3xl md:text-4xl font-extrabold text-sky-600 dark:text-sky-400">18+</p>
-                <p class="text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Years IT Experience</p>
+    <!-- Metrics Section -->
+    <section id="metrics" class="py-12 border-y border-slate-200/80 dark:border-slate-800/80 bg-white/50 dark:bg-slate-900/50 glass-card">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+            
+            <!-- Metric 1 -->
+            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 space-y-2 relative overflow-hidden group">
+                <div class="absolute -right-2 -bottom-2 text-sky-500/10 dark:text-sky-400/10 text-6xl font-black">19</div>
+                <p class="text-3xl md:text-4xl font-black text-sky-600 dark:text-sky-400">19+</p>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">Years Leadership</p>
+                <div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-sky-500 h-full w-full"></div>
+                </div>
+                <p class="text-[11px] text-slate-400">SDLC & Delivery Management</p>
             </div>
-            <div>
-                <p class="text-3xl md:text-4xl font-extrabold text-cyan-600 dark:text-cyan-400">100%</p>
-                <p class="text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">SDLC Ownership</p>
+
+            <!-- Metric 2 -->
+            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 space-y-2 relative overflow-hidden group">
+                <div class="absolute -right-2 -bottom-2 text-cyan-500/10 dark:text-cyan-400/10 text-6xl font-black">100</div>
+                <p class="text-3xl md:text-4xl font-black text-cyan-600 dark:text-cyan-400">100%</p>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">ISO 27001 ISMS</p>
+                <div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-cyan-500 h-full w-full"></div>
+                </div>
+                <p class="text-[11px] text-slate-400">6-Month On-Time Certification</p>
             </div>
-            <div>
-                <p class="text-3xl md:text-4xl font-extrabold text-sky-600 dark:text-sky-400">PMP®</p>
-                <p class="text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">PMI Certified</p>
+
+            <!-- Metric 3 -->
+            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 space-y-2 relative overflow-hidden group">
+                <div class="absolute -right-2 -bottom-2 text-emerald-500/10 dark:text-emerald-400/10 text-6xl font-black">21</div>
+                <p class="text-3xl md:text-4xl font-black text-emerald-600 dark:text-emerald-400">21 CFR</p>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">Regulatory Audit</p>
+                <div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-emerald-500 h-full w-full"></div>
+                </div>
+                <p class="text-[11px] text-slate-400">Part 11 & ISO 13485 Compliant</p>
             </div>
-            <div>
-                <p class="text-3xl md:text-4xl font-extrabold text-cyan-600 dark:text-cyan-400">ISO</p>
-                <p class="text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">27001 Lead Auditor</p>
+
+            <!-- Metric 4 -->
+            <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 space-y-2 relative overflow-hidden group">
+                <div class="absolute -right-2 -bottom-2 text-purple-500/10 dark:text-purple-400/10 text-6xl font-black">PMP</div>
+                <p class="text-3xl md:text-4xl font-black text-purple-600 dark:text-purple-400">PMP®</p>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">Global License</p>
+                <div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                    <div class="bg-purple-500 h-full w-full"></div>
+                </div>
+                <p class="text-[11px] text-slate-400">PMI Credential #4285497</p>
             </div>
+
         </div>
     </section>
 
-    <!-- Core Competencies -->
-    <section id="competencies" class="py-20 max-w-6xl mx-auto px-6">
+    <!-- Leadership Capability Matrix -->
+    <section id="matrix" class="py-20 max-w-6xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Core Competencies</h2>
-            <p class="text-slate-600 dark:text-slate-400 mt-2">Harmonizing program management rigor with deep technical execution.</p>
+            <h2 class="text-3xl font-black text-slate-900 dark:text-white">Leadership Capability Matrix</h2>
+            <p class="text-slate-600 dark:text-slate-400 mt-2">Integrating high-level program governance, security compliance, and modern enterprise software architectures.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Pillar 1 -->
+            <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:border-sky-500 transition-all glass-card">
+                <div class="w-12 h-12 rounded-2xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center text-xl mb-6 shadow-md">
+                    <i class="fa-solid fa-chart-diagram"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Program & Delivery Leadership</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                    Strategic planning, sprint execution, resource allocation, and cross-functional team alignment from concept to market.
+                </p>
+                <div class="space-y-2 text-xs font-semibold text-slate-700 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-4">
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> PMP® Project Governance</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Agile / Scrum & Waterfall</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Stakeholder & Vendor Management</div>
+                </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:border-cyan-500 transition-all glass-card">
+                <div class="w-12 h-12 rounded-2xl bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-xl mb-6 shadow-md">
+                    <i class="fa-solid fa-file-shield"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Audit, Risk & Compliance</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                    Directing information security standards, risk assessments, NIST CSF 2.0 frameworks, and medical device compliance.
+                </p>
+                <div class="space-y-2 text-xs font-semibold text-slate-700 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-4">
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-500"></i> ISO 27001:2022 Lead Auditor</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-500"></i> 21 CFR Part 11 & ISO 13485</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-500"></i> System Validation (IQ/OQ/PQ)</div>
+                </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:border-emerald-500 transition-all glass-card">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-6 shadow-md">
+                    <i class="fa-solid fa-code-branch"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Enterprise Tech & CRM</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                    Modernizing legacy software into scalable .NET Core architectures and driving Salesforce Sales Cloud workflow automation.
+                </p>
+                <div class="space-y-2 text-xs font-semibold text-slate-700 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-4">
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Salesforce Cloud Automation</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> .NET Core / Web APIs / C#</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> SQL Server Database Design</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="projects" class="py-20 bg-sky-50/50 dark:bg-slate-900/40 border-t border-slate-200/80 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-black text-slate-900 dark:text-white">Enterprise Case Studies</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">Selected strategic initiatives highlighting governance, regulatory compliance, and system overhauls.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Case 1 -->
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm glass-card hover:border-sky-500 transition-all">
+                    <div class="flex items-center justify-between mb-4 border-b border-slate-100 dark:border-slate-800 pb-3">
+                        <span class="text-xs font-extrabold uppercase text-sky-600 dark:text-sky-400">Security Governance</span>
+                        <span class="px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-[11px] font-bold">100% On-Time Delivery</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">ISO 27001:2022 ISMS Enterprise Implementation</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
+                        Led the end-to-end ISO 27001:2022 rollout from initial gap analysis to successful final certification within six months. Managed control implementations, policies, risk frameworks, and audit readiness across technical teams.
+                    </p>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm glass-card hover:border-sky-500 transition-all">
+                    <div class="flex items-center justify-between mb-4 border-b border-slate-100 dark:border-slate-800 pb-3">
+                        <span class="text-xs font-extrabold uppercase text-sky-600 dark:text-sky-400">CRM Transformation</span>
+                        <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 text-[11px] font-bold">Process Automation</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Salesforce CRM Lead-to-Order Overhaul</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
+                        Spearheaded Salesforce Sales Cloud implementation to streamline business workflows. Oversaw Apex and Visualforce customization, legacy SQL data migration, and automated business operations.
+                    </p>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm glass-card hover:border-sky-500 transition-all">
+                    <div class="flex items-center justify-between mb-4 border-b border-slate-100 dark:border-slate-800 pb-3">
+                        <span class="text-xs font-extrabold uppercase text-sky-600 dark:text-sky-400">Quality Systems</span>
+                        <span class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 text-[11px] font-bold">IQ / OQ / PQ Validated</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">eQMS Platform Deployment</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
+                        Managed workflow mapping, system evaluation, and formal IQ/OQ/PQ validation protocols for an Electronic Quality Management System fully compliant with ISO 13485 and 21 CFR Part 820.
+                    </p>
+                </div>
+
+                <!-- Case 4 -->
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm glass-card hover:border-sky-500 transition-all">
+                    <div class="flex items-center justify-between mb-4 border-b border-slate-100 dark:border-slate-800 pb-3">
+                        <span class="text-xs font-extrabold uppercase text-sky-600 dark:text-sky-400">Clinical Applications</span>
+                        <span class="px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 text-[11px] font-bold">21 CFR Part 11</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">eCRF Web Application Implementation</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
+                        Directed end-to-end delivery of an Electronic Case Report Form application for clinical data collection, incorporating audit trails, electronic signature controls, and ISO 13485 compliance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Governance & Education Section -->
+    <section id="governance" class="py-20 max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl font-black text-slate-900 dark:text-white">Governance & Credentials</h2>
+            <p class="text-slate-600 dark:text-slate-400 mt-2">Formally certified expertise across project delivery, information security, and quality management systems.</p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white dark:bg-slate-800/60 border border-sky-200/80 dark:border-slate-700/60 rounded-2xl p-8 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center text-xl mb-6">
-                    <i class="fa-solid fa-list-check"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Project & Delivery Management</h3>
-                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                    End-to-end SDLC ownership across regulated and enterprise environments. Championing Agile, Scrum, quality governance, and cybersecurity compliance.
-                </p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-sky-50 dark:bg-slate-900 rounded-lg text-xs font-mono text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-slate-700">PMP® Governance</span>
-                    <span class="px-3 py-1 bg-sky-50 dark:bg-slate-900 rounded-lg text-xs font-mono text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-slate-700">Agile / Scrum</span>
-                    <span class="px-3 py-1 bg-sky-50 dark:bg-slate-900 rounded-lg text-xs font-mono text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-slate-700">ISO 27001 Security</span>
-                    <span class="px-3 py-1 bg-sky-50 dark:bg-slate-900 rounded-lg text-xs font-mono text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-slate-700">Regulatory Compliance</span>
+            <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm glass-card">
+                <h3 class="text-base font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-certificate text-sky-600"></i> Professional Certifications
+                </h3>
+                <div class="space-y-4">
+                    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-xs text-slate-900 dark:text-white">PMP® - Project Management Professional</span>
+                            <span class="text-[11px] text-sky-600 font-mono font-bold">#4285497</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 mt-1">Project Management Institute (PMI)</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-xs text-slate-900 dark:text-white">ISO 27001 Lead Auditor (ISMS)</span>
+                            <span class="text-[11px] text-sky-600 font-mono font-bold">fe7c714a</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 mt-1">Mastermind Assurance</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-xs text-slate-900 dark:text-white">ISO 13485 Internal Auditor (MDQMS)</span>
+                            <span class="text-[11px] text-sky-600 font-mono font-bold">SEC Global</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 mt-1">Medical Devices Quality Management Governance</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-white dark:bg-slate-800/60 border border-sky-200/80 dark:border-slate-700/60 rounded-2xl p-8 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 rounded-xl bg-cyan-100 dark:bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-xl mb-6">
-                    <i class="fa-solid fa-code"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Full Stack .NET Engineering</h3>
-                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                    Hands-on architecture with C#, ASP.NET Core MVC, Web API, and SQL Server. Deep commitment to OOP principles, Repository Patterns, and clean code.
-                </p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-sky-50 dark:bg-slate-900 rounded-lg text-xs font-mono text-cyan-700 dark:text-cyan-300 border border-sky-200 dark:border-slate-700">C# / .NET Core</span>
-                    <span class="px-3 py-1 bg-sky-50 dark:bg-slate-900 rounded-lg text-xs font-mono text-cyan-700 dark:text-cyan-300 border border-sky-200 dark:border-slate-700">ASP.NET Web API</span>
-                    <span class="px-3 py-1 bg-sky-50 dark:bg-slate-900 rounded-lg text-xs font-mono text-cyan-700 dark:text-cyan-300 border border-sky-200 dark:border-slate-700">MS SQL Server</span>
-                    <span class="px-3 py-1 bg-sky-50 dark:bg-slate-900 rounded-lg text-xs font-mono text-cyan-700 dark:text-cyan-300 border border-sky-200 dark:border-slate-700">Entity Framework</span>
-                    <span class="px-3 py-1 bg-sky-50 dark:bg-slate-900 rounded-lg text-xs font-mono text-cyan-700 dark:text-cyan-300 border border-sky-200 dark:border-slate-700">Angular / JS</span>
+            <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm glass-card">
+                <h3 class="text-base font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap text-sky-600"></i> Higher Education
+                </h3>
+                <div class="space-y-4">
+                    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800">
+                        <span class="font-bold text-xs text-slate-900 dark:text-white">MBA in Information Technology</span>
+                        <p class="text-[11px] text-slate-500 mt-1">Suresh Gyan Vihar University</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800">
+                        <span class="font-bold text-xs text-slate-900 dark:text-white">Bachelor of Commerce (B.Com)</span>
+                        <p class="text-[11px] text-slate-500 mt-1">VMOU Open University</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Timeline -->
-    <section id="experience" class="py-20 bg-sky-100/40 dark:bg-slate-900/60 border-t border-sky-200/60 dark:border-slate-800">
+    <!-- Career History -->
+    <section id="experience" class="py-20 bg-sky-50/50 dark:bg-slate-900/40 border-t border-slate-200/80 dark:border-slate-800">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Professional Experience</h2>
-                <p class="text-slate-600 dark:text-slate-400 mt-2">A track record of technological leadership and software development excellence.</p>
+                <h2 class="text-3xl font-black text-slate-900 dark:text-white">Executive Career History</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">19+ years of progressive technical leadership and software delivery experience.</p>
             </div>
 
-            <div class="space-y-8 max-w-4xl mx-auto">
+            <div class="space-y-6 max-w-4xl mx-auto">
                 <!-- Role 1 -->
-                <div class="bg-white dark:bg-slate-800/80 border border-sky-200/80 dark:border-slate-700 rounded-2xl p-6 shadow-sm">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm glass-card">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
                         <div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Developer Manager</h3>
-                            <p class="text-sm font-semibold text-sky-600 dark:text-sky-400">Concept Medical Research Pvt Ltd</p>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Software Developer Manager</h3>
+                            <p class="text-xs font-semibold text-sky-600 dark:text-sky-400">Concept Medical Research Pvt Ltd | Surat, Gujarat, India</p>
                         </div>
-                        <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-slate-700 text-sky-700 dark:text-sky-300 text-xs font-semibold w-fit">Apr 2024 – Present</span>
+                        <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-slate-800 text-sky-700 dark:text-sky-300 text-xs font-bold w-fit">Apr 2024 – Present</span>
                     </div>
-                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Directing software application development teams and steering digital solutions across regulated medical research systems. Overseeing full lifecycle delivery, technical standards, and cross-functional project alignment.
-                    </p>
+                    <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside mt-3 leading-relaxed">
+                        <li>Directing sprint execution, Agile project roadmaps, and EspoCRM workflows across engineering teams.</li>
+                        <li>Spearheading ISO 27001 ISMS implementation, NIST CSF 2.0 security readiness, and audit governance.</li>
+                        <li>Modernizing enterprise architecture toward modern .NET Core microservices and cloud deployments.</li>
+                    </ul>
                 </div>
 
                 <!-- Role 2 -->
-                <div class="bg-white dark:bg-slate-800/80 border border-sky-200/80 dark:border-slate-700 rounded-2xl p-6 shadow-sm">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm glass-card">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
                         <div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Developer Manager</h3>
-                            <p class="text-sm font-semibold text-sky-600 dark:text-sky-400">Envision Scientific Pvt Ltd</p>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Software Developer Manager</h3>
+                            <p class="text-xs font-semibold text-sky-600 dark:text-sky-400">Envision Scientific Pvt Ltd | Surat, Gujarat, India</p>
+                            <p class="text-[11px] text-slate-500 italic mt-0.5">Progression: Software Developer → IT Specialist → IT Manager → Software Development Manager</p>
                         </div>
-                        <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-slate-700 text-sky-700 dark:text-sky-300 text-xs font-semibold w-fit">Aug 2018 – Mar 2024</span>
+                        <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-slate-800 text-sky-700 dark:text-sky-300 text-xs font-bold w-fit">Aug 2018 – Mar 2024</span>
                     </div>
-                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Led full-stack engineering initiatives and software architecture strategy. Managed multi-disciplinary developer teams, optimized database performance on MS SQL Server, and maintained strict quality governance.
+                    <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-2 list-disc list-inside mt-3 leading-relaxed">
+                        <li>Managed full SDLC delivery of web applications using .NET Core, C#, Web APIs, and SQL Server.</li>
+                        <li>Maintained Quality Management Systems (QMS) and oversaw vendor integrations for EDC and CRO platforms.</li>
+                    </ul>
+                </div>
+
+                <!-- Role 3 -->
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm glass-card">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Software Developer</h3>
+                            <p class="text-xs font-semibold text-sky-600 dark:text-sky-400">Indian Women Fashions | Surat, Gujarat</p>
+                            <p class="text-[11px] text-slate-500 italic mt-0.5">Progression: Software Developer</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-slate-800 text-sky-700 dark:text-sky-300 text-xs font-bold w-fit">Nov 2015 – Jul 2018</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
+                        Delivered web applications using reusable, maintainable code structures. Collaborated with cross-functional teams to translate user feedback into feature upgrades.
+                    </p>
+                </div>
+
+                <!-- Role 4 -->
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm glass-card">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Web Developer</h3>
+                            <p class="text-xs font-semibold text-sky-600 dark:text-sky-400">3NY Technology | Surat, Gujarat</p>
+                            <p class="text-[11px] text-slate-500 italic mt-0.5">Progression: Web Developer → Senior Web Developer</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-slate-800 text-sky-700 dark:text-sky-300 text-xs font-bold w-fit">May 2012 – Oct 2015</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
+                        Designed and built scalable websites and mockups using JIRA, Asana, and Trello for agile sprint tracking.
+                    </p>
+                </div>
+
+                <!-- Role 5 -->
+                <div class="bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-7 shadow-sm glass-card">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Technical Support Engineer</h3>
+                            <p class="text-xs font-semibold text-sky-600 dark:text-sky-400">Easy Solution | Mumbai, Maharashtra</p>
+                            <p class="text-[11px] text-slate-500 italic mt-0.5">Progression: Technical Support Engineer → Senior Technical Support Engineer</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-sky-100 dark:bg-slate-800 text-sky-700 dark:text-sky-300 text-xs font-bold w-fit">Aug 2007 – Sep 2011</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
+                        Managed SLA incident tracking, root cause analysis, ticket escalation, and mentored junior support engineers.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Open Source Projects -->
-    <section id="projects" class="py-20 max-w-6xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-            <div>
-                <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Open Source & Contributions</h2>
-                <p class="text-slate-600 dark:text-slate-400 mt-2">Tools, utilities, and components hosted on GitHub.</p>
-            </div>
-            <a href="https://github.com/skgacharya?tab=repositories" target="_blank" class="mt-4 md:mt-0 text-sky-600 dark:text-sky-400 hover:text-sky-700 font-semibold text-sm flex items-center gap-2">
-                View GitHub Repositories <i class="fa-solid fa-arrow-right"></i>
-            </a>
-        </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
-            <!-- Repo 1 -->
-            <div class="bg-white dark:bg-slate-800/60 border border-sky-200/80 dark:border-slate-700/60 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between text-slate-400 mb-3">
-                        <i class="fa-regular fa-folder-closed text-sky-600 dark:text-sky-400 text-xl"></i>
-                        <i class="fa-brands fa-github text-lg text-slate-500"></i>
-                    </div>
-                    <h4 class="text-lg font-bold text-slate-900 dark:text-white hover:text-sky-600 dark:hover:text-sky-400 transition">
-                        <a href="https://github.com/skgacharya/Reminder-Application" target="_blank">Reminder-Application</a>
-                    </h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                        Desktop application for managing Todo lists, birthday, and anniversary reminders cleanly.
-                    </p>
-                </div>
-                <div class="mt-6 flex items-center gap-3 text-xs text-slate-500 font-mono">
-                    <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> C#</span>
-                </div>
-            </div>
-
-            <!-- Repo 2 -->
-            <div class="bg-white dark:bg-slate-800/60 border border-sky-200/80 dark:border-slate-700/60 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between text-slate-400 mb-3">
-                        <i class="fa-regular fa-folder-closed text-sky-600 dark:text-sky-400 text-xl"></i>
-                        <i class="fa-brands fa-github text-lg text-slate-500"></i>
-                    </div>
-                    <h4 class="text-lg font-bold text-slate-900 dark:text-white hover:text-sky-600 dark:hover:text-sky-400 transition">
-                        <a href="https://github.com/skgacharya/FileExport" target="_blank">FileExport Utility</a>
-                    </h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                        Export HTML data tables directly into PDF, CSV, Excel, plain text, or send directly to printer.
-                    </p>
-                </div>
-                <div class="mt-6 flex items-center gap-3 text-xs text-slate-500 font-mono">
-                    <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span> HTML/JS</span>
-                </div>
-            </div>
-
-            <!-- Repo 3 -->
-            <div class="bg-white dark:bg-slate-800/60 border border-sky-200/80 dark:border-slate-700/60 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between text-slate-400 mb-3">
-                        <i class="fa-regular fa-folder-closed text-sky-600 dark:text-sky-400 text-xl"></i>
-                        <i class="fa-brands fa-github text-lg text-slate-500"></i>
-                    </div>
-                    <h4 class="text-lg font-bold text-slate-900 dark:text-white hover:text-sky-600 dark:hover:text-sky-400 transition">
-                        <a href="https://github.com/skgacharya/Image-Cropping-Plugin" target="_blank">Image Cropping Plugin</a>
-                    </h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                        Cross-platform demo for uploading and cropping images using Jcrop in ASP.NET environments.
-                    </p>
-                </div>
-                <div class="mt-6 flex items-center gap-3 text-xs text-slate-500 font-mono">
-                    <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span> JavaScript</span>
-                </div>
+        <section class="py-16 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-200/80 dark:border-slate-800">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-black text-slate-900 dark:text-white">Leadership Focus</h2>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 max-w-2xl mx-auto">Technology leadership roles where program delivery, digital transformation, enterprise applications, governance, and regulated-industry experience create value.</p>
+            <div class="flex flex-wrap justify-center gap-2 mt-6">
+                <span class="px-3 py-2 rounded-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-bold">Senior Technology & Program Manager</span>
+                <span class="px-3 py-2 rounded-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-bold">Technical Program Manager</span>
+                <span class="px-3 py-2 rounded-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-bold">Senior Project Manager</span>
+                <span class="px-3 py-2 rounded-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-bold">IT Program Manager</span>
+                <span class="px-3 py-2 rounded-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-bold">Digital Transformation Manager</span>
+                <span class="px-3 py-2 rounded-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-bold">IT Governance Manager</span>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer id="contact" class="py-16 border-t border-sky-200/80 dark:border-slate-800 bg-white dark:bg-slate-950 transition-colors">
+    <!-- Footer -->
+    <footer id="contact" class="py-16 border-t border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-950">
         <div class="max-w-6xl mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Let's Connect</h2>
-            <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm max-w-md mx-auto">
-                Open for leadership opportunities, program delivery consulting, and technical strategy.
-            </p>
-            
+            <h2 class="text-2xl font-black text-slate-900 dark:text-white">Executive Inquiries & Leadership Engagement</h2>        
+            <div class="flex justify-center items-center gap-6 mt-6 text-xs text-slate-700 dark:text-slate-300 font-mono">
+                <span><i class="fa-solid fa-envelope text-sky-600 me-1"></i> skgacharya@gmail.com</span>
+                <span>•</span>
+                <span><i class="fa-solid fa-phone text-sky-600 me-1"></i> +91 9099281810</span>
+            </div>
+
             <div class="flex justify-center items-center gap-6 mt-8">
-                <a href="https://www.linkedin.com/in/skgacharya" target="_blank" class="w-11 h-11 rounded-full bg-sky-100 dark:bg-slate-800 text-sky-700 dark:text-slate-300 hover:bg-sky-600 hover:text-white dark:hover:bg-sky-500 transition flex items-center justify-center text-lg">
+                <a href="https://www.linkedin.com/in/skgacharya" target="_blank" aria-label="LinkedIn" class="w-11 h-11 rounded-full bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-slate-300 hover:bg-sky-600 hover:text-white transition flex items-center justify-center text-lg shadow-sm">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/skgacharya" target="_blank" class="w-11 h-11 rounded-full bg-sky-100 dark:bg-slate-800 text-sky-700 dark:text-slate-300 hover:bg-sky-600 hover:text-white dark:hover:bg-sky-500 transition flex items-center justify-center text-lg">
+                <a href="https://github.com/skgacharya" target="_blank" aria-label="GitHub" class="w-11 h-11 rounded-full bg-slate-100 dark:bg-slate-800 text-sky-600 dark:text-slate-300 hover:bg-sky-600 hover:text-white transition flex items-center justify-center text-lg shadow-sm">
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
 
-            <p class="text-xs text-slate-500 dark:text-slate-500 mt-12">
-                © 2026 Sunil Acharya. All rights reserved.
+            <p class="text-[11px] text-slate-400 mt-12">
+                © 2026 Sunil Acharya. Senior Technical Leadership & Governance.
             </p>
         </div>
     </footer>
 
-    <!-- Light/Dark Toggle Script -->
+    <!-- Theme Toggle Script -->
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
         const htmlRoot = document.getElementById('html-root');
 
-        // Check system theme or stored setting
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             htmlRoot.classList.add('dark');
             htmlRoot.classList.remove('light');
